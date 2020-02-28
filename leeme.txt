@@ -1,0 +1,94 @@
+Detalle de lo implementado:
+
+El sitio se encuentra desarrollado en HTML, CSS y JAVASCRIPT, dentro de la carpeta js encontrarán dos archivos, uno de funciones denominado functions.js y otro referido al formulario
+de contacto con nombre forms.js. 
+Detallo las funciones de functions.js tenemos dos funciones flecha:
+
+01- Función searchbtn():  
+
+searchbtn = () => {
+    let btn = document.getElementById('btn_search')
+    let input = document.getElementById('input_search')
+
+    if(input.style.display === 'inline') {
+        input.style.display = 'none'
+    }else {
+        input.style.display = 'inline'
+    }
+}
+
+Donde vemos la variable let que llama al elemento con id btn_search y la variable let que llama al elemento con id input_search.
+Básicamente la función lo que hace es cuando el evento onclick es ejecutado, mostrar el input de búsqueda, si el evento se ejecuta nuevamente sobre el elemento btn_search
+el input de búsqueda vuelve a ocultarse, para lograrlo se utiliza el condicional if, con los atributos del style y display. 
+
+02- Función profile():
+
+profile = () => {
+    let btn = document.getElementById('buttons')
+    let div = document.getElementById('about')
+
+    if(div.style.display === 'flex') {
+        div.style.display = 'none'
+        btn.style.display = 'flex'
+    }else {
+        div.style.display = 'flex'
+        btn.style.display = 'none'
+    }
+}
+
+La función profile() funciona de la misma manera que searchbtn pero en este caso lo que ocultamos es un div, el div donde se desarrolla el contenido de "about" más específicamente
+dentro de este div se comenta de quién se trata la página, en este caso, de mi persona. Como antes, utilicé variables let para que se ejecuten solo dentro de esta función, y 
+posteriormente el condicional if nuevamente. 
+
+ARCHIVO forms.js:
+
+startval = () => {
+    document.formulario.addEventListener('invalid', validation, true)
+    document.formulario.addEventListener('input', check, false)
+    document.getElementById('btn-submit').addEventListener('click', send, false)
+}
+
+validation = (e) => {
+    element = e.target
+    element.style.background = '#FFDDDD'
+}
+
+check = (e) => {
+    element = e.target
+    if(element.validity.valid) {
+        element.style.background = '#FFF'
+        element.style.borderColor = '#2ECC40'
+    }else {
+        element.style.background = '#FFF'
+        element.style.borderColor = '#FF4136'
+    }
+}
+
+send = () => {
+    validacion = document.formulario.checkValidity()
+    if(validacion){
+        document.formulario.submit()
+        alert('A la brevedad me contacto con vos')
+        
+    }
+}
+
+whatsapp = () => {
+
+    input = document.getElementById('telefono')
+    
+    input.placeholder = 'Ejemplo: +54 11 1234-5678'
+    
+} 
+
+window.addEventListener('load', startval, false)
+
+Dentro de este archivo tenemos varias funciones, la primera es startval() en esta función se escuchan los eventos sobre el input utilizando addEventListener, al final del código 
+esta función es ejecutada.
+La función validation(e) llamada en startval() utiliza el evento como parámetro, si el evento es llamado mediante el target, el background cambia de color, en este caso el elemento es el input.
+La función check(e) hace el checkeo mediante un condicional if, del elemento llamado mediante eventos, si la validación mediante validity es verdadera, es decir es valida, 
+el border-color será de determinado color (verde), de lo contrario (else) será de otro (rojo).
+La función send() utiliza la variable validacion para llamar a la función checkValidity que se encarga de validar o no el form con nombre formulario. Posteriormente mediante el 
+condicional if se valida el form si el botón submit es presionado ejecutando un alert. 
+Finalmente tenemos la función whatsapp() la cual modifica el placeholder del elemento input tel para mostrar un texto de ejemplo cuando el input es llamado. 
+Para cerrar el script se carga mediante load la funcion startval().

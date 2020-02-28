@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- HOJA DE ESTILOS PRINCIPAL -->
+    <link rel="stylesheet" type="text/css" href="./sass/css/style.css">
+    <!-- FUENTES DE GOOGLE FONTS -->
+    <link href="https://fonts.googleapis.com/css?family=Squada+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <!-- ICONOS DE FONTAWESOME -->
+    <script src="https://kit.fontawesome.com/187c7953cf.js" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="./js/functions.js"></script>
+    <title>JCrego</title>
+</head>
+<body>
+    <section class="content">
+         <section class="header">
+             <h1>
+                 <a href="./index.html">jCREGO</a>
+             </h1>
+             <nav class="navbar">
+                 <ul>
+                     <li><input type="search" id="input_search" placeholder="Buscar..."/>
+                        <a type="button" id="btn_search" onclick="searchbtn()">
+                            <i class="fas fa-search"></i>
+                        </a>
+                    </li>
+                     <li><a href="./index.html">Home</a></li>
+                     <li><a href="./pages/contact.html">Contact</a></li>
+                     <li><a target="_blank" href="https://www.facebook.com"><i class="fab fa-facebook"></i></a></li>
+                     <li><a target="_blank" href="https://www.twitter.com"><i class="fab fa-twitter"></i></a></li>
+                     <li><a target="_blank" href="https://www.instagram.com"><i class="fab fa-instagram"></i></a></li>
+                     <li><a target="_blank" href="https://www.youtube.com"><i class="fab fa-youtube"></i></a></li>
+                     <li><a target="_blank" href="https://www.github.com"><i class="fab fa-github"></i></a></li>
+                 </ul>
+             </nav>
+         </section>
+         <section class="wrap">
+             <article class="buttons" id="buttons">
+                 <div>
+                    <a type="button" class="btn" href="./pages/projects.html">Projects</a>
+                    <a type="button" class="btn" href="./pages/portfolio.html">Portfolio</a>
+                    <a type="button" class="btn" href="./pages/contact.html">Contact</a>
+                    <input type="button" class="btn" value="About" id="btn_about" onclick="profile()" />
+                </div>
+             </article>
+             <article class="about" id="about">
+                 <div class="image-about"> 
+                 </div>
+                 <p>
+                     Frontend Developer: actualmente me encuentro trabajando en varios proyectos como free lance
+                 </p>
+                 <p>
+                     Lenguajes con los que trabajo: Javascript, CSS, SASS, ReactJS, PHP, JSON, NodeJS, Wordpress
+                 </p>
+                 <p>
+                     <a href="index.html">Volver</a>
+                 </p>
+            </article>
+         </section>
+    </section>
+</body>
+</html>
